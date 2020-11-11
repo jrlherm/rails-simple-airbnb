@@ -17,8 +17,9 @@ puts 'Creating flats...'
     address: Faker::Address.full_address,
     description: Faker::Lorem.paragraph,
     price_per_night: Faker::Number.within(range: 24..200),
-    number_of_guests: Faker::Number.within(range: 1..12)
-  )
+    number_of_guests: Faker::Number.within(range: 1..12),
+    image_url: "https://source.unsplash.com/random?sig=#{rand(1..100)}")
+
   puts "Created #{Faker::App.name}"
 }
 puts ''
