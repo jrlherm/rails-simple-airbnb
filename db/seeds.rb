@@ -13,7 +13,7 @@ puts 'Creating flats...'
 
 25.times {
   Flat.create!(
-    name: Faker::Lorem.sentence,
+    name: Faker::Lorem.sentence(word_count: 3),
     address: Faker::Address.full_address,
     description: Faker::Lorem.paragraph,
     price_per_night: Faker::Number.within(range: 24..200),
