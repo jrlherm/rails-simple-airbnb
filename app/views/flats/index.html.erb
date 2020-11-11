@@ -1,22 +1,30 @@
-<div class="container mt-3">
-  <div class="row">
-    <div class="col-12">
-      <h1>All our Flats</h1>
+<div class="banner mb-3 d-flex align-items-end" style="background: linear-gradient(90deg, rgba(255,255,255,0.6460784997592788) 0%, rgba(255,255,255,0.18389362580969892) 100%),
+                                                      url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60');
+                                                      background-size: cover;
+                                                      background-position: center;
+                                                      height: 350px;">
+  <div class="container pt-3">
+    <div class="row">
+      <div class="col-12">
+        <h1>All our Flats</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <% if @query %>
+          <p>You searched for <strong><%= @query %></strong>. We found <%= @flats.count %> flats out of our <%= Flat.count %> on our website.</p>
+        <% else %>
+          <p>All <%= Flat.count %> flats.</p>
+        <% end %>
+      </div>
     </div>
   </div>
-
-  <div class="row">
-    <div class="col">
-      <% if @query %>
-        <p>You searched for <strong><%= @query %></strong>. We found <%= @flats.count %> flats out of our <%= Flat.count %> on our website.</p>
-      <% else %>
-        <p>All <%= Flat.count %> flats.</p>
-      <% end %>
-    </div>
-  </div>
+</div>
 
 
 
+<div class="container mb-3">
   <div class="row flat-cards">
     <% @flats.each do |flat| %>
       <div class="card flat-card">
