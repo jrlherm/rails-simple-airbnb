@@ -1,0 +1,57 @@
+<div class="map" style="background-image: url('https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200'); height: 320px;"></div>
+<div class="container" style="margin-top: -50px">
+
+  <div class="d-flex">
+    <div class="flex-grow-1 mr-3">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h1 class="card-title"><%= @flat.name %></h1>
+          <h6 class="card-subtitle mb-2 text-muted"><%= @flat.address %></h6>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body" style="min-height: 400px;">
+          <h4 class="card-title">Description</h4>
+          <h6 class="card-text"><%= @flat.description %></h6>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Book this place!</h4>
+          <form action="">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">From:</span>
+              </div>
+              <input type="text" class="form-control" placeholder="12/10/2017" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mt-2">
+              <div class="input-group-prepend">
+                <span class="input-group-text">To:</span>
+              </div>
+              <input type="text" class="form-control" placeholder="18/10/2017" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <input type="submit" value="Book" class="btn btn-success mt-2" style="width: 100%">
+          </form>
+        </div>
+      </div>
+
+      <div class="card mt-3">
+        <div class="card-body">
+          <h3 class="card-title mb-4">Details</h3>
+          <div class="d-flex mt-3">
+            <h5 class="card-subtitle mb-2 "><i class="fas fa-dollar-sign"></i><%= @flat.price_per_night %></h5>
+            <h5 class="card-subtitle mb-2  ml-3"><i class="fas fa-users"></i><%= @flat.number_of_guests %></h5>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

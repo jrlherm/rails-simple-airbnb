@@ -1,0 +1,36 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12">
+      <h1>All our Flats</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+        <p>All 3 flats.</p>
+    </div>
+  </div>
+
+  <div class="row flat-cards">
+    <% @flats.each do |flat| %>
+      <div class="card flat-card">
+        <img class="card-img-top" src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200" alt="Card image cap">
+        <div class="card-body">
+          <h4><%= flat.name %></h4>
+          <h6 class="mb-4"><%= flat.description %></h6>
+          <div class="d-flex mb-3">
+            <h5><strong><i class="fas fa-dollar-sign"></i> </strong><%= flat.price_per_night %></h5>
+            <h5 class="ml-3"><strong><i class="fas fa-users"></i> </strong><%= flat.number_of_guests %></h5>
+          </div>
+
+          <%= link_to 'Details', flat_path(flat) %> |
+          <%= link_to 'Update', edit_flat_path(flat) %> |
+          <%= link_to "Delete",
+                  flat_path(flat),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
